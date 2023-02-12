@@ -30,36 +30,36 @@ function App() {
 
   }
 
-  // const carouselBookPoetry =(e)=>{
-  //   //console.log('looookk')
-  //  const res= axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:poetry+inauthor&key=${API_KEY}`)
-  //   .then(res=>dispatch(actions. CarouselBookPoetry(res.data.items))).catch((err)=>console.log(err))
+  const carouselBookPoetry =(e)=>{
+    //console.log('looookk')
+   const res= axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:poetry+inauthor&key=${API_KEY}`)
+    .then(res=>dispatch(actions. CarouselBookPoetry(res.data.items))).catch((err)=>console.log(err))
 
 
-  // }
+  }
 
-  // const carouselBookDrama =(e)=>{
-  //   //console.log('looookk')
-  //  const res= axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:drama+inauthor&key=${API_KEY}`)
-  //   .then(res=>dispatch(actions. CarouselBookDrama(res.data.items))).catch((err)=>console.log(err))
-
-
-  // }
-
-  // const carouselBookFiction =(e)=>{
-  //   //console.log('looookk')
-  //  const res= axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:fiction+inauthor&key=${API_KEY}`)
-  //   .then(res=>dispatch(actions. CarouselBookFiction(res.data.items))).catch((err)=>console.log(err))
+  const carouselBookDrama =(e)=>{
+    //console.log('looookk')
+   const res= axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:drama+inauthor&key=${API_KEY}`)
+    .then(res=>dispatch(actions. CarouselBookDrama(res.data.items))).catch((err)=>console.log(err))
 
 
-  // }
+  }
+
+  const carouselBookFiction =(e)=>{
+    //console.log('looookk')
+   const res= axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:fiction+inauthor&key=${API_KEY}`)
+    .then(res=>dispatch(actions. CarouselBookFiction(res.data.items))).catch((err)=>console.log(err))
+
+
+  }
 
   
   useEffect(()=>{
     lookBook();
-    // carouselBookPoetry();
-    // carouselBookDrama();
-    // carouselBookFiction();
+    carouselBookPoetry();
+    carouselBookDrama();
+    carouselBookFiction();
    
   },[search])
   return (

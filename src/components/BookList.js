@@ -11,6 +11,8 @@ function BookList() {
   return (
     <div className='listadd-div'>
       <Header1 />
+      <div className='listadd-div-inner'>
+      <h1>My Book List</h1>
     
     
 
@@ -30,6 +32,7 @@ function BookList() {
      })):(<div><h1>'No Books to Show'</h1></div>)
      
    }
+   </div>
 
 
    </div>

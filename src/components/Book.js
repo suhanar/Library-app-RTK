@@ -16,11 +16,11 @@ function Book({lookBook}) {
 {
         search === '' ? 
         <div>
-           {/* <CarouselPoetry /> 
+           <CarouselPoetry /> 
            <CarouselFiction />
-           <CarouselDrama /> */}
+           <CarouselDrama />
 
-           <h1>Empty</h1>
+         
         
 
         </div>

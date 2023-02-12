@@ -10,6 +10,8 @@ function Favorite() {
   return (
     <div  className='listadd-div'>
     <Header1 />
+    <div className='listadd-div-inner'>
+      <h1>Favorites</h1>
     
     {favorite.length!== 0
 ?
@@ -25,7 +27,9 @@ favorite.map((el)=> {
 
       
       
-      }</div>
+      }
+      </div>
+      </div>
   )
 }
 
