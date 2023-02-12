@@ -18,8 +18,9 @@ function CarouselPoetry() {
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}
-        itemsToShow={1}
-        itemsToScroll={1}
+        itemsToShow={3}
+        
+        itemsToScroll={3}
         forwardBtnProps={{
           //here you can also pass className, or any other button element attributes
           style: {
@@ -58,16 +59,17 @@ function CarouselPoetry() {
         responsiveProps={[
           {
             itemsToShow: 3,
-            itemsToScroll: 1,
+            itemsToScroll: 3,
             minWidth: 768,
+            
           },
         ]}
         speed={400}
         easing="linear"
       >
         {/* here you can also pass any other element attributes. Also, you can use your custom components as slides */}
-         {
-          poetry.map((el)=>{
+         {poetry &&
+          poetry.map((el,i)=>{
 
             let thumbnail = el.volumeInfo.imageLinks&&el.volumeInfo.imageLinks.smallThumbnail;
           let price =el.saleInfo.listPrice&&el.saleInfo.listPrice.amount ;
@@ -75,14 +77,14 @@ function CarouselPoetry() {
             console.log(poetry.length)
             return(
               <div className='cards-inner1' style={{ width: 300, height: 300,backgroundColor:'black',color:'white'}}
-              onClick={()=>{setShow(!show);setBookItem(el)}} >
+              onClick={()=>{setShow(!show);setBookItem(el)}} key={i} >
 
               <div className='img-div'><img src={thumbnail} /></div>
               <div className='carousel-inner'>
               <div>{el.volumeInfo.title} </div>
               <span>By</span>
                <div>{el.volumeInfo.authors}</div>
-              <div>{price}</div>
+              <div>${price}</div>
               </div>
               
               

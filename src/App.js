@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect,useState} from 'react';
 import './App.css';
 import axios from 'axios';
 
@@ -17,6 +17,7 @@ function App() {
   const search = useSelector((state)=> state.search);
   const carousel = useSelector((state)=>state.carousel)
   const dispatch = useDispatch();
+  
 
  
 //&maxResults=${40}
@@ -29,11 +30,11 @@ function App() {
 
 
   }
-
+//+inauthor
   const carouselBookPoetry =(e)=>{
     //console.log('looookk')
    const res= axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:poetry+inauthor&key=${API_KEY}`)
-    .then(res=>dispatch(actions. CarouselBookPoetry(res.data.items))).catch((err)=>console.log(err))
+    .then(res=>dispatch(actions.CarouselBookPoetry(res.data.items))).catch((err)=>console.log(err))
 
 
   }
@@ -57,11 +58,19 @@ function App() {
   
   useEffect(()=>{
     lookBook();
+   
+   
+  },[search])
+
+  useEffect(()=>{
+    
     carouselBookPoetry();
     carouselBookDrama();
     carouselBookFiction();
    
-  },[search])
+  },[])
+
+
   return (
     
 

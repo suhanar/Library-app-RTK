@@ -83,7 +83,10 @@ const bookSlice = createSlice({
 
         },
         CarouselBookPoetry: (state,action)=>{
-            state.poetry = action.payload
+           
+                state.poetry = action.payload
+          
+            
         },
         CarouselBookDrama : (state,action)=>{
             state.drama = action.payload

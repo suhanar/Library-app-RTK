@@ -18,7 +18,7 @@ function Cards() {
     
     return(
     <div className='cards-div'>
-    {
+    { book?
        book.map((el)=> {
         let thumbnail = el.volumeInfo.imageLinks&&el.volumeInfo.imageLinks.smallThumbnail;
         let price =el.saleInfo.listPrice&&el.saleInfo.listPrice.amount ;
@@ -47,7 +47,7 @@ function Cards() {
             <div className='img-div'><img src={thumbnail} /></div>
             <div><p>{el.volumeInfo.title.slice(0,60)}</p> </div>
             <span><p>By</p></span>
-             <div><p>{el.volumeInfo.authors.slice(0,10)}</p></div>
+             <div><p>{el.volumeInfo.authors}</p></div>
              <div>{rating? Array.from(new Array(Math.ceil(rating)), () =><i style={{color:'yellow',fontSize:'12px'}}class="fa fa-star"></i> ): 
              <p style={{color:'yellow',fontSize:'12px'}}>No ratings</p>}</div>
              {/* <div>${price}</div>  */}
@@ -75,7 +75,7 @@ function Cards() {
           
           )
         }   
-     })
+     }):(<h1>Not Found</h1>)
     
     
     
