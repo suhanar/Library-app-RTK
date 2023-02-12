@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+Project Title
+Library-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Demo link:
+Access my site at google.com
 
-## Available Scripts
+Table of Content:
+About The App
+Screenshots
+Technologies
+Installation and Setup Instructions
+Approach
+Status
+Credits
+License
 
-In the project directory, you can run:
 
-### `npm start`
+About The App
+Library-App is an app that a user can view ,add and favorite books that he/she interested in.I used Google Book API in this project to fetch data. There is a category of list in the home page ,where user can select then the app will populate with the results of book that user selected. There is an option for add the book into 'My Book List' and user can view that book details in the '/list' router page. Also there is a Favorite option where user can add his favorite books into it. When clicking favorite it will redirect to '/favorite' router. For more details about the book user can click anywhere in the book div. So a modal will pop up and show the details of that particular book.The home page contains 3 carousels. It is based on certain categories of books.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Screenshots
+![Writing](https://unsplash.com/photos/VBPzRgd7gfc)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Picture by Suhana
 
-### `npm test`
+Technologies
+HTML
+CSS
+JAVASCRIPT
+REACTJS
+REACT TOOL KIT
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Installations
+This project was bootstrapped with Create React App
+To install Redux Tool Kit 
+npm install @reduxjs/toolkit react-redux
+To install Axios
+npm install axios
+To install Carousal
+npm install react-simply-carousel
+To install React Router
+npm i react-router-dom
 
-### `npm run build`
+API used for fetching data is Google Book API  https://www.googleapis.com/books/v1/volumes?
+Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone down this repository. You will need node and npm installed globally on your machine.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Set Up
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm install
 
-### `npm run eject`
+To Run Test Suite:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm test
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To Start Server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To Visit App:
 
-## Learn More
+localhost:3000/
+Approach
+I adopted the BEM naming style for my css class names and ...
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Status
+Basic functionalities are done. I will add user Authentication in Future. So the version 2 is loading...
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
