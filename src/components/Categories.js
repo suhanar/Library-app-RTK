@@ -4,7 +4,7 @@ import {actions} from '../store/index';
 
 function Categories() {
   const dispatch = useDispatch();
-    const category = ['Fiction','Comedy','Adventure','Ghost','Thriller','Drama','Poetry','American Drama','News']
+    const category = ['Fiction','Comedy','Adventure story','Ghost','Thriller','Drama','Poetry','American Drama','News']
   return (
     <div className='category'>
         <h6>Search By Categories</h6>

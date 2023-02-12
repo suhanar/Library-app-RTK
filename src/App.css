@@ -62,7 +62,7 @@
   top:100px;
   
   position:relative;
-  overflow-y: scroll;
+  
  
   
 }
@@ -79,13 +79,25 @@
   
   
 }
- .category-inner{
+
+ .category-div{
+  position:fixed;
+ }
+ .category{
  
   
-}
+ }
+ .category-inner{
+  overflow-y: scroll;
+  position: absolute;
+  height: 280%;
+  left:20px;
+  top:80px;
+
+ }
 .category-btn{
   width:100%;
-  margin-left:20px;
+ 
 
 }
 .category-div h6{
