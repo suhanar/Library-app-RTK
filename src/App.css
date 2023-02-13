@@ -429,6 +429,17 @@
   
 
 }
+.welcome{
+  width:35vw;
+  height:45vh;
+  background-color: rgb(248, 245, 245);
+  position:absolute;
+  z-index:2;
+  left:500px;
+  top:200px;
+  border-radius:5px;
+  box-shadow: rgba(160, 157, 157, 0.35) 0px 5px 15px;
+}
 
 
 

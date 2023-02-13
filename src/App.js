@@ -1,6 +1,7 @@
 import {useEffect,useState} from 'react';
 import './App.css';
 import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import {actions} from './store/index';
 import { useSelector,useDispatch } from 'react-redux';
@@ -9,6 +10,7 @@ import {BrowserRouter, Route,Routes } from 'react-router-dom';
 import Home from './components/Home';
 import BookList from './components/BookList';
 import Favorite from './components/Favorite';
+import { fetchBook } from './store/index';
 
 const API_KEY = 'AIzaSyC3jVLIYb8-6yobnr4DBvTvI_sNxzG_wHs';
 
@@ -30,6 +32,20 @@ function App() {
 
 
   }
+
+  // export  const fetchData= createAsyncThunk(
+  //   'books/fetchData',
+  //   async (term) =>{
+  //     const res = axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:poetry+inauthor&key=${API_KEY}`);
+  //     return res.data.items;
+  //     console.log(res)
+  //   }
+  // )
+
+
+
+
+
 //+inauthor
   const carouselBookPoetry =(e)=>{
     //console.log('looookk')
@@ -38,6 +54,7 @@ function App() {
 
 
   }
+ 
 
   const carouselBookDrama =(e)=>{
     //console.log('looookk')
@@ -57,14 +74,20 @@ function App() {
 
   
   useEffect(()=>{
-    lookBook();
+     lookBook();
+    // dispatch(fetchBook())
+   
    
    
   },[search])
 
+ 
+  
+
   useEffect(()=>{
+   
     
-    carouselBookPoetry();
+     carouselBookPoetry();
     carouselBookDrama();
     carouselBookFiction();
    
@@ -75,7 +98,8 @@ function App() {
     
 
 <Routes>
-        <Route path='/' element={<Home lookBook={lookBook}/>} />
+        {/* <Route path='/' element={<Home lookBook={lookBook}/>} /> */}
+        <Route path='/' element={<Home/>} />
         <Route path='/list' element={<BookList  />} />
         <Route path='/favorite' element={<Favorite  />} />
      </Routes>

@@ -1,4 +1,4 @@
-import { configureStore,createSlice,current } from "@reduxjs/toolkit";
+import { configureStore,createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -11,6 +11,8 @@ JSON.parse(localStorage.getItem("userAddRedux")):[];
 
 const initialState = {
     book : [],
+    loading:false,
+    error:'',
     search:'',
     bookList: addItemsBook,
     favorite:Favoriteitems,
@@ -18,9 +20,19 @@ const initialState = {
     carousel:[],
     fiction:[],
     drama:[],
-    poetry:[]
+    poetry:[],
+    show:true
+    
    
 }
+
+
+// export const fetchBook=createAsyncThunk('book/fetchBook',async ()=>{
+//     const res= await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${API_KEY}`)
+//         .then(res=>res.data.items)
+  
+//     return res;
+// })
 
 
   
@@ -42,49 +54,32 @@ const bookSlice = createSlice({
         addFavorite: (state,action)=>{
             state.favorite.push(action.payload)
             localStorage.setItem("userFavoriteRedux", JSON.stringify(state.favorite.map((item)=>item)))
-            //state.favorite=action.payload
-            //console.log(state.favorite)
-            //console.log('state value',current.state.favorite)
+           
         },
         removeFavorite: (state,action)=>{
-           //state.favorite=state.favorite.filter((el)=>el.id !== action.payload.id);
+           
         
 
         state.favorite.splice(state.favorite.findIndex((arrow) => arrow.id === action.payload), 1);
         localStorage.setItem("userFavoriteRedux", JSON.stringify(state.favorite))
-        // localStorage.getItem(
-        //     "userFavoriteRedux",
-        //     JSON.parse([state.favorite])
-        //   )
-         
-
-
-
-           
-            
-            //state.favorite = filter
-            //state.filterList = filter
+       
         },
         removeItem:(state,action)=>{
 
             state.bookList.splice(state.bookList.findIndex((arrow) => arrow.id === action.payload), 1);
             localStorage.setItem("userAddRedux", JSON.stringify(state.bookList))
-            //console.log(state.bookList)
-            // localStorage.setItem(
-            //     "userAddRedux",
-            //     JSON.stringify([state.bookList])
-            //   )
+          
         },
         addItem:(state,action)=>{
             state.bookList.push(action.payload);
             localStorage.setItem("userAddRedux", JSON.stringify(state.bookList.map((item)=>item)))
-            //console.log('booklist',state.bookList)
-           // localStorage.setItem("userAddRedux", JSON.stringify([state.bookList,action.payload]))
+        
 
         },
         CarouselBookPoetry: (state,action)=>{
            
-                state.poetry = action.payload
+                state.poetry = action.payload;
+                state.poetry.shift();
           
             
         },
@@ -94,12 +89,34 @@ const bookSlice = createSlice({
         CarouselBookFiction : (state,action)=>{
             state.fiction = action.payload
         },
-        // setSearch : (state,action)=>{
+       
 
-        // }
+        setShow : (state,action)=>{
+            state.show = false;
+        }
       
 
-    }
+    },
+
+    // extraReducers:(builder)=>{
+       
+    //     builder.addCase(fetchBook.pending,state=>{
+    //         state.loading = true;
+    //         console.log('loading');
+    //     })
+    //     builder.addCase(fetchBook.fulfilled,(state,action)=>{
+    //         state.loading = false;
+    //         state.book = action.payload;
+    //         state.error='';
+    //         console.log('fulfilled');
+    //     })
+    //     builder.addCase(fetchBook.rejected,(state,action)=>{
+    //         state.loading = false;
+    //         state.book = [];
+    //         state.error = action.error.message;
+    //     })
+
+    // }
 })
 
 const store = configureStore({

@@ -20,7 +20,7 @@ function CarouselPoetry() {
         onRequestChange={setActiveSlideIndex}
         itemsToShow={3}
         
-        itemsToScroll={3}
+        itemsToScroll={1}
         forwardBtnProps={{
           //here you can also pass className, or any other button element attributes
           style: {
@@ -59,7 +59,7 @@ function CarouselPoetry() {
         responsiveProps={[
           {
             itemsToShow: 3,
-            itemsToScroll: 3,
+            itemsToScroll: 1,
             minWidth: 768,
             
           },
