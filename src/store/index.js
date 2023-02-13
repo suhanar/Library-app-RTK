@@ -1,7 +1,7 @@
 import { configureStore,createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+
 
 const Favoriteitems = localStorage.getItem("userFavoriteRedux") !== null? 
 JSON.parse(localStorage.getItem("userFavoriteRedux")):[];

@@ -12,7 +12,9 @@ import BookList from './components/BookList';
 import Favorite from './components/Favorite';
 import { fetchBook } from './store/index';
 
-const API_KEY = 'AIzaSyC3jVLIYb8-6yobnr4DBvTvI_sNxzG_wHs';
+
+
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
   const book = useSelector((state)=> state.book);
