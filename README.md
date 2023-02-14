@@ -76,6 +76,7 @@ To Start Server:
 
 To Visit App:
 
-localhost:3000/ Approach I adopted the BEM naming style for my css class names and ...
+localhost:3000/ 
 
-Status Basic functionalities are done. I will add user Authentication in Future. So the version 2 is loading...
+# Status 
+Basic functionalities are done. I will add user Authentication in Future. So the version 2 is loading...
