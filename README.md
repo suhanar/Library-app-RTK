@@ -7,7 +7,7 @@
 ### `About The App` 
 ### `Screenshots` 
 ### `Technologies` 
-### `Storage'
+### `Storage`
 ### `Installation`
 ### `Setup Instructions` 
 ### `Approach` 
