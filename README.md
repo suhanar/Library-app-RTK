@@ -7,6 +7,7 @@
 ### `About The App` 
 ### `Screenshots` 
 ### `Technologies` 
+### `Storage'
 ### `Installation`
 ### `Setup Instructions` 
 ### `Approach` 
@@ -41,6 +42,9 @@ Picture by Suhana
 ### REACTJS 
 ### REACT 
 ### TOOL KIT
+
+# Storage
+For storage i used local storage for reading list,favorite, and most viewed
 
 # Installations 
 This project was bootstrapped with Create React App 
