@@ -16,31 +16,38 @@ function PanelCard() {
   
                       <div className='panel-card-div'>
 
-<li key={Math.random()}>
+                        <div className='viewed panel-card-common' key={Math.random()}>
+
+
+                        
                           <div>
                           <i class="fa fa-solid fa-book"></i>
                           </div>
-                          <Link to='/viewed'>
-                          <button>
+                          <Link to='/viewed' style={{textDecoration:'none'}}>
+                            <div>
+                            <button>
                           {el.recent} 
                           </button>
+                            </div>
+                          
                          
                           </Link>
                           
                           
                           
-                      </li>
+                      
 
+                        </div>
 
+                   
 
+                      <div className='list panel-card-common' key={Math.random()}>
 
-
-
-                            <li key={Math.random()}>
+                      
                           <div>
                           <i class="fa fa-solid fa-book"></i>
                           </div>
-                          <Link to='/list'>
+                          <Link to='/list' style={{textDecoration:'none'}}>
                             <div className='panel-card-btn'>
                             <button>
                           {el.reading} <span className='panel-card-len'>{bookList.length}</span>
@@ -52,26 +59,41 @@ function PanelCard() {
                           
                           
                           
-                      </li>
-  
-  
-  
-                      <li key={Math.random()}>
+                      
+                      </div>
+
+                      <div className='favorite-list panel-card-common' key={Math.random()}>
+
+                      
                           <div>
                           <i class="fa fa-solid fa-book"></i>
                           </div>
-                          <Link to='/favorite'>
+                          <Link to='/favorite' style={{textDecoration:'none'}}>
+                            <div>
+
+                            
                           <button>
                           {el.favorite} <span>{favorite.length}</span>
                           </button>
+                          </div>
                          
                           </Link>
                           
                           
                           
-                      </li>
+                      
 
 
+                      </div>
+
+
+
+
+                         
+  
+  
+  
+                      
                      
   
                       </div>

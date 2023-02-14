@@ -3,16 +3,25 @@ import React from 'react'
 function Welcome({onClose,show}) {
   return (
     <div className='welcome'>
-        <div style={{float:'right',margin:'10px'}}>
-        <button style={{cursor:'pointer',backgroundColor:'red',padding:'4px 5px',border:'none',color:'white',fontWeight:700}}  onClick={onClose}>x</button>
+        <div className='welcome-div' style={{}}>
+        <button className='welcome-btn' style={{}}  onClick={onClose}>x</button>
         </div>
-        <div style={{marginTop:'40px',padding:'10px',display:'flex',flexDirection:'column',textAlign:'center'}}>
+        <div className='p-h4' style={{}}>
             <h4>Library App</h4>
 
         <p >
+          
+            Welcome to Library-App....
+            
+            Here you can search for your favorite books.
+            
+          You can add it to your favorite list and also in the My Reading List.
+          You can see most recently viewed book in the tab 'Recently Viewed'.
+            Also if you want to see the details click the book image.
+          
 
            
-Welcome to Library-App.Here you can search for your favorite books.And you can add it to your favorite list and also in the My Reading List.You can see most recently viewed book in the tab 'Recently Viewed'.Also if you want tos see the details click the book image.
+
 
 </p>
 

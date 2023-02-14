@@ -5,9 +5,9 @@ import PanelCard from './PanelCard';
 function PanelList() {
   return (
     <div className='panel-list'>
-      <div>
+      {/* <div>
       <PanelCard />
-      </div>
+      </div> */}
       <div className='category-div'>
       <Categories />
       </div>

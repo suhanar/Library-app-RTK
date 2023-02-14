@@ -13,8 +13,9 @@ function CarouselDrama() {
  
 
   return (
-    <div>
+    <div className='carousel-hide-res'>
       <h4 style={{color:'white',marginLeft:'0px'}}>Books based on Drama</h4>
+      <div className='simply-carousel '>
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}
@@ -75,7 +76,7 @@ function CarouselDrama() {
           if(thumbnail != undefined && price != undefined){
             //console.log(poetry.length)
             return(
-              <div className='cards-inner1' style={{ width: 300, height: 350,backgroundColor:'black',color:'white'}}
+              <div className='cards-inner1' style={{ }}
               onClick={()=>{setShow(!show);setBookItem(el)}} >
 
               <div className='img-div'><img src={thumbnail} /></div>
@@ -98,6 +99,7 @@ function CarouselDrama() {
  
        
       </ReactSimplyCarousel>
+      </div>
 
       {
       show && <Modal bookItem={bookItem} onClose={()=>setShow(false) } show={show} />

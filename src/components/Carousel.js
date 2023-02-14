@@ -12,12 +12,16 @@ function CarouselPoetry() {
   const [show,setShow] = useState(false);
   const [bookItem,setBookItem] = useState();
   const favorite = useSelector((state)=> state.favorite);
+  
+  const filterList = useSelector((state)=>state.filterList)
+  const bookList = useSelector((state)=>state.bookList)
 
  
 
   return (
     <div>
       <h4 style={{color:'white',marginLeft:'0px'}}>Books based on Poetry</h4>
+      <div className='simply-carousel'>
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}
@@ -63,7 +67,10 @@ function CarouselPoetry() {
           {
             itemsToShow: 1,
             itemsToScroll: 1,
-            maxWidth: 750
+            maxWidth: 750,
+            
+            
+
             
             
           },
@@ -85,11 +92,12 @@ function CarouselPoetry() {
               
 
             
-              <div className='cards-inner1' style={{  width: 300,
-                height: 350,
-                backgroundColor:'black',
-                color:'white'}} key={el.id}
+              <div className='cards-inner1' style={{  }} key={el.id}
               onClick={()=>{setShow(!show);setBookItem(el)}} >
+
+              
+                
+
                 
               
              
@@ -118,6 +126,7 @@ function CarouselPoetry() {
  
        
       </ReactSimplyCarousel>
+      </div>
 
       {
       show && <Modal bookItem={bookItem} onClose={()=>setShow(false) } show={show} />

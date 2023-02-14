@@ -75,7 +75,7 @@
   
 }
 .panel-list .category-div{
-  margin-top:200px;
+  margin-top:10px;
   /* position: fixed; */
  
   
@@ -92,7 +92,7 @@
  .category-inner{
   overflow-y: scroll;
   position: absolute;
-  height: 280%;
+  height: 300%;
   left:20px;
   top:80px;
 
@@ -118,12 +118,12 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.panel-card {
+/* .panel-card {
   position: fixed; 
   margin-left:-20px; 
  
-}
-.panel-card ul li{
+} */
+/* .panel-card ul li{
   display: flex;
   
   
@@ -133,24 +133,64 @@
   text-align: center;
  
   
-}
-.panel-card ul li i{
+} */
+/* .panel-card ul li i{
   margin-right:5px;
-}
-.panel-card-div{
+} */
+/* .panel-card-div{
   display:flex;
   flex-direction: column;
   background: radial-gradient(circle, rgba(18,16,16,0.74) 0%, rgba(74,74,77,1) 100%);
  
  
  
-}
-.panel-card-div span{
+} */
+/* .panel-card-div span{
     color:rgb(236, 107, 21);
     font-size:18px;
     background-color: white;
     padding:0px 4px;
+} */
+/* .panel-card-div button{
+  background-color:rgb(77, 75, 75) ;
+  color:white;
+  font-size:14px;
+  border:none;
+  font-weight:800;
+  border:1px solid white;
+  cursor:pointer;
+  width:100%;
+  
+} */
+
+.header2{
+  width:100%;
+  background-color: black;
+  height:80%;
+  
 }
+.panel-card div{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top:5px;
+  
+ 
+  
+}
+.panel-card  .panel-card-common{
+  display:flex;
+  flex-direction:row;
+ 
+  padding:10px;
+  text-decoration: none;
+ 
+}
+.fa-book{
+  margin-right:10px;
+  color:white;
+  font-size:120%;
+}
+
 .panel-card-div button{
   background-color:rgb(77, 75, 75) ;
   color:white;
@@ -162,6 +202,13 @@
   width:100%;
   
 }
+.panel-card-div span{
+  color:rgb(236, 107, 21);
+  font-size:18px;
+  background-color: white;
+  padding:0px 4px;
+  
+} 
 
 .book{
   position: absolute;
@@ -245,8 +292,8 @@
 
 .carousel{
   background-color: white;
-   width:200px;
-  height:400px; 
+   /* width:200px;
+  height:400px;  */
   
   margin-left:150px;
   
@@ -261,6 +308,10 @@
   align-items: center;
   padding:20px;
   border:5px solid white;
+  width: 300px;
+  height: 350px;
+  background-color:black;
+  color:white;
   
 }
 .carousel-inner{
@@ -284,7 +335,8 @@
   color:white;
   font-weight:800;
   position: absolute;
-  top:-50px
+  top:-50px;
+ 
  
  
  
@@ -442,6 +494,32 @@
   border-radius:5px;
   box-shadow: rgba(160, 157, 157, 0.35) 0px 5px 15px;
 }
+.p-h4{
+ 
+}
+.welcome-div{
+  float:right;
+  margin:10px
+
+}
+.welcome-btn{
+  cursor:pointer;
+  background-color:red;
+  padding:4px 8px;
+  border:none;
+  color:white;
+  font-weight:700;
+
+}
+.p-h4{
+  margin-top:20px;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  margin-left:20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 
 
@@ -471,6 +549,9 @@
 
 
 }
+
+
+
 @media (max-width: 750px) {
   .header {
     
@@ -478,16 +559,22 @@
   .side-by-side{
 
     display: grid;
-    grid-template-columns: 30% 80%;
+    grid-template-columns: 33% 80%;
+  }
+
+  .category{
+    width:100%;
   }
   .category-btn{
-    width:70%;
+    width:100%;
+    margin-left:-15px;
    
   
   }
   .category-div h6{
    
     font-size:12px;
+    margin-left:3px;
    
   }
   .category-div button{
@@ -498,9 +585,9 @@
     padding:10px;
    
     width:100%;
-    
-    top:10px;
-    left:100px;
+    height:10px;
+    top:0px;
+    left:70px;
   
   }
   .search i{
@@ -511,9 +598,14 @@
    font-size: 15px;
    
   }
+  .title{
+    top:-15px;
+    left:15px;
+  }
   .panel-card {
     position: fixed; 
     margin-left:-36px; 
+    margin-top:-10px;
    
   }
   .panel-card ul li{
@@ -542,7 +634,8 @@
     padding:0px 4px;
 }
 .panel-list .category-div{
-  margin-top:100px;
+  margin-top:20px;
+  
  
   
 }
@@ -555,6 +648,97 @@
 }
 .cards-inner{
   margin-left:-20px;
+}
+.search i{
+  display: none;
+}
+.book{
+  left:175px;
+}
+.cards-inner{
+ 
+ 
+ 
+  margin-bottom:25px;
+ 
+   width:150px; 
+  height:270px; 
+ 
+  /* margin-right:10px; */
+ 
+  line-height: 10px;
+  
+ 
+
+}
+.add-remove{
+  width:150px;
+}
+.simply-carousel{
+  display: flex;
+  flex-direction: column;
+  margin-left:-30px;
+ 
+}
+.cards-inner1{
+  
+ 
+  width: 200px;
+  height: 360px;
+ 
+  
+}
+.carousel-hide-res{
+  display: none;
+}
+.welcome{
+  width:75vw;
+  height:65vh;
+ 
+  left:50px;
+  top:120px;
+ 
+}
+.listadd-div-inner {
+  
+  width:100%;
+  background-color: rgb(250, 250, 250);
+  
+  
+  left:0px;
+  top:10px;
+
+  /* display: flex;
+  flex-direction: column; */
+ 
+  
+}
+.listadd img{
+  width:5%;
+  margin-left:-300px
+  
+ 
+}
+.listadd h6{
+  position: absolute;
+  right:100;
+  
+
+}
+.modal{
+  height: 20vh;
+    width: 80%;
+   
+    left: 50px;
+    top: 190px;
+   
+   
+    
+}
+.modal-inner .close{
+ 
+  right:2rem;
+ 
 }
 
 

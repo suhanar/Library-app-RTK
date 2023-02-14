@@ -19,7 +19,7 @@ App is an app that a user can view ,add and favorite books that he/she intereste
 
 # Screenshots 
 <p>
-<img src='./screenshot-library/library-home-new.png' width='200px' height='150px'>
+<img src='./screenshot-library/library-newhome.png' width='200px' height='150px'>
 <img src='./screenshot-library/libraryPanel.png' width='200px' height='150px'>
 <img src='./screenshot-library/library-search.png' width='200px' height='150px'>
 <img src='./screenshot-library/libraryAddFavorite.png' width='200px' height='150px'>

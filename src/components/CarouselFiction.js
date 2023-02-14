@@ -12,8 +12,10 @@ function CarouselFiction() {
  
 
   return (
-    <div>
+    <div className='carousel-hide-res'>
       <h4 style={{color:'white',marginLeft:'0px'}}>Books based on Fiction</h4>
+
+      <div className='simply-carousel carousel-hide-res'>
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}
@@ -74,7 +76,7 @@ function CarouselFiction() {
           if(thumbnail != undefined && price != undefined){
             //console.log(poetry.length)
             return(
-              <div className='cards-inner1' style={{ width: 300, height: 350,backgroundColor:'black',color:'white'}}
+              <div className='cards-inner1' style={{ }}
               onClick={()=>{setShow(!show);setBookItem(el)}} >
 
               <div className='img-div'><img src={thumbnail} /></div>
@@ -97,6 +99,7 @@ function CarouselFiction() {
  
        
       </ReactSimplyCarousel>
+      </div>
 
       {
       show && <Modal bookItem={bookItem} onClose={()=>setShow(false) } show={show} />

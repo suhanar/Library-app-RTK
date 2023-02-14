@@ -5,6 +5,7 @@ import Book from './Book';
 import Welcome from './Welcome';
 import {actions} from '../store/index';
 import { useSelector,useDispatch } from 'react-redux';
+import Header2 from './Header2';
 
 function Home({lookBook}) {
   
@@ -20,6 +21,7 @@ function Home({lookBook}) {
        
         {/* <Header lookBook={lookBook} /> */}
         <Header  />
+        <Header2 />
       </div>
 
       <div className='side-by-side'>
