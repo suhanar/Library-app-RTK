@@ -17,7 +17,7 @@ function CarouselFiction() {
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}
-        itemsToShow={1}
+        itemsToShow={3}
         itemsToScroll={1}
         forwardBtnProps={{
           //here you can also pass className, or any other button element attributes
@@ -58,7 +58,7 @@ function CarouselFiction() {
           {
             itemsToShow: 3,
             itemsToScroll: 1,
-            minWidth: 768,
+            minWidth: 750,
           },
         ]}
         speed={400}
@@ -70,18 +70,21 @@ function CarouselFiction() {
 
             let thumbnail = el.volumeInfo.imageLinks&&el.volumeInfo.imageLinks.smallThumbnail;
           let price =el.saleInfo.listPrice&&el.saleInfo.listPrice.amount ;
+          let rating = el.volumeInfo.averageRating;
           if(thumbnail != undefined && price != undefined){
             //console.log(poetry.length)
             return(
-              <div className='cards-inner1' style={{ width: 300, height: 300,backgroundColor:'black',color:'white'}} 
-              onClick={()=>{setShow(!show);setBookItem(el)}}>
+              <div className='cards-inner1' style={{ width: 300, height: 350,backgroundColor:'black',color:'white'}}
+              onClick={()=>{setShow(!show);setBookItem(el)}} >
 
               <div className='img-div'><img src={thumbnail} /></div>
               <div className='carousel-inner'>
-              <div>{el.volumeInfo.title} </div>
-              <span>By</span>
-               <div>{el.volumeInfo.authors}</div>
-              <div>{price}</div>
+              <div><h5>{el.volumeInfo.title}</h5>
+              <p>{el.volumeInfo.authors}</p> </div>
+             
+               <div>{rating? Array.from(new Array(Math.ceil(rating)), () =><i style={{color:'yellow',fontSize:'12px'}}class="fa fa-star"></i> ): 
+             <p style={{color:'yellow',fontSize:'12px'}}>No ratings</p>}
+             ${price}</div>
               </div>
               
               

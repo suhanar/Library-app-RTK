@@ -3,7 +3,9 @@
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  margin:auto;
 }
+
 .header{
   background: radial-gradient(circle, rgba(125,124,125,0.9023984593837535) 0%, rgba(12,12,13,1) 100%);
   height:80px;
@@ -73,7 +75,7 @@
   
 }
 .panel-list .category-div{
-  margin-top:150px;
+  margin-top:200px;
   /* position: fixed; */
  
   
@@ -458,7 +460,18 @@
   position: absolute;
   top:30px;
 }
-/* @media screen and (max-width: 680px) {
+
+.cards-inner1 div{
+  padding: 0px;
+  text-align: center;
+  
+}
+.cards-inner1{
+ 
+
+
+}
+@media (max-width: 750px) {
   .header {
     
   }
@@ -540,4 +553,11 @@
   
 
 }
-} */
+.cards-inner{
+  margin-left:-20px;
+}
+
+
+
+
+}

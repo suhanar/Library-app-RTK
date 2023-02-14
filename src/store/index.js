@@ -9,6 +9,9 @@ JSON.parse(localStorage.getItem("userFavoriteRedux")):[];
 const addItemsBook= localStorage.getItem("userAddRedux") !== null? 
 JSON.parse(localStorage.getItem("userAddRedux")):[];
 
+const recentViewed=localStorage.getItem('recentViewedItem')!==null?
+JSON.parse(localStorage.getItem('recentViewedItem')):[]
+
 const initialState = {
     book : [],
     loading:false,
@@ -21,7 +24,10 @@ const initialState = {
     fiction:[],
     drama:[],
     poetry:[],
-    show:true
+    show:true,
+    
+    recently:recentViewed,
+    viewedLength:0
     
    
 }
@@ -93,7 +99,18 @@ const bookSlice = createSlice({
 
         setShow : (state,action)=>{
             state.show = false;
+        },
+        recentlyViewed :(state,action)=>{
+            state.recently.push(action.payload);
+            localStorage.setItem("recentViewedItem", JSON.stringify(state.recently.map((item)=>item)))
+        },
+        removeViewed :(state,action)=>{
+            state.recently.splice(state.recently.findIndex((arrow) => arrow.id === action.payload), 1);
+            localStorage.setItem("recentViewedItem", JSON.stringify(state.recently))
+          
+
         }
+      
       
 
     },
@@ -122,6 +139,10 @@ const bookSlice = createSlice({
 const store = configureStore({
     reducer : bookSlice.reducer,
     // storage:loadFromLocalStorage()
+    middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
     
 })
 

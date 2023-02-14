@@ -11,6 +11,7 @@ import Home from './components/Home';
 import BookList from './components/BookList';
 import Favorite from './components/Favorite';
 import { fetchBook } from './store/index';
+import Viewed from './components/Viewed';
 
 
 
@@ -104,6 +105,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/list' element={<BookList  />} />
         <Route path='/favorite' element={<Favorite  />} />
+        <Route path='/viewed' element={<Viewed />} />
      </Routes>
    
   );

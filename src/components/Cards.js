@@ -9,6 +9,8 @@ function Cards() {
     const favorite = useSelector((state)=> state.favorite);
     const filterList = useSelector((state)=>state.filterList)
     const bookList = useSelector((state)=>state.bookList)
+    const recentlyViewed=useSelector((state)=>state.recentlyViewed)
+    
     const [show,setShow] = useState(false);
   const [bookItem,setBookItem] = useState();
   
@@ -28,7 +30,23 @@ function Cards() {
           id:el.id,
           title : el.volumeInfo.title,
           author : el.volumeInfo.authors,
-           image : thumbnail
+           image : thumbnail,
+           
+        }
+        const recently = {
+          id:el.id,
+          title : el.volumeInfo.title,
+          author : el.volumeInfo.authors,
+           image : thumbnail,
+          //  recently:new Date()
+        }
+
+        const handleClick=()=>{
+          setShow(!show);
+          setBookItem(el);
+          dispatch(actions.recentlyViewed(obj))
+          console.log(recently)
+
         }
         if(thumbnail != undefined && price != undefined){
           return(
@@ -43,7 +61,7 @@ function Cards() {
                   <div className='favorite btn2'><i style={{float:'right'}} onClick={()=>dispatch(actions.addFavorite(obj))} class="fa fa-star-o"></i></div>)
                 }
 
-<div onClick={()=>{setShow(!show);setBookItem(el)}}>
+<div onClick={handleClick}>
             <div className='img-div'><img src={thumbnail} /></div>
             <div><p>{el.volumeInfo.title.slice(0,60)}</p> </div>
             <span><p>By</p></span>

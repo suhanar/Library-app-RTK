@@ -12,7 +12,8 @@ function Welcome({onClose,show}) {
         <p >
 
            
-Welcome to Library-App.Here you can search for your favorite books.And you can add it to your favorite list and also in the My Reading List.
+Welcome to Library-App.Here you can search for your favorite books.And you can add it to your favorite list and also in the My Reading List.You can see most recently viewed book in the tab 'Recently Viewed'.Also if you want tos see the details click the book image.
+
 </p>
 
         </div>

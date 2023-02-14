@@ -3,12 +3,15 @@ import { Carousel } from 'react-responsive-carousel';
 import ReactSimplyCarousel from 'react-simply-carousel';
 import { useSelector,useDispatch } from 'react-redux';
 import Modal from './Modal';
+import {actions} from '../store/index';
+
 
 function CarouselPoetry() {
   const poetry = useSelector((state)=>state.poetry)
   const [activeSlideIndex, setActiveSlideIndex] = useState(0); 
   const [show,setShow] = useState(false);
   const [bookItem,setBookItem] = useState();
+  const favorite = useSelector((state)=> state.favorite);
 
  
 
@@ -58,9 +61,10 @@ function CarouselPoetry() {
         }}
         responsiveProps={[
           {
-            itemsToShow: 3,
+            itemsToShow: 1,
             itemsToScroll: 1,
-            minWidth: 768,
+            maxWidth: 750
+            
             
           },
         ]}
@@ -73,23 +77,40 @@ function CarouselPoetry() {
 
             let thumbnail = el.volumeInfo.imageLinks&&el.volumeInfo.imageLinks.smallThumbnail;
           let price =el.saleInfo.listPrice&&el.saleInfo.listPrice.amount ;
+          let rating = el.volumeInfo.averageRating;
+         
           if(thumbnail != undefined && price != undefined){
             console.log(poetry.length)
             return(
-              <div className='cards-inner1' style={{ width: 300, height: 300,backgroundColor:'black',color:'white'}}
-              onClick={()=>{setShow(!show);setBookItem(el)}} key={i} >
+              
+
+            
+              <div className='cards-inner1' style={{  width: 300,
+                height: 350,
+                backgroundColor:'black',
+                color:'white'}} key={el.id}
+              onClick={()=>{setShow(!show);setBookItem(el)}} >
+                
+              
+             
 
               <div className='img-div'><img src={thumbnail} /></div>
               <div className='carousel-inner'>
-              <div>{el.volumeInfo.title} </div>
-              <span>By</span>
-               <div>{el.volumeInfo.authors}</div>
-              <div>${price}</div>
+              <div><h5>{el.volumeInfo.title}</h5>
+              <p>{el.volumeInfo.authors}</p> </div>
+             
+              
+               <div>{rating? Array.from(new Array(Math.ceil(rating)), () =><i style={{color:'yellow',fontSize:'12px'}}class="fa fa-star"></i> ): 
+             <p style={{color:'yellow',fontSize:'12px'}}>No ratings</p>}
+             ${price}</div>
+              <div></div>
               </div>
+             
               
               
     
               </div>
+              
             )
           }
           })

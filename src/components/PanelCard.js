@@ -5,7 +5,8 @@ import { useSelector,useDispatch } from 'react-redux';
 function PanelCard() {
     const favorite = useSelector((state)=> state.favorite);
     const bookList = useSelector((state)=>state.bookList)
-    const list=[{favorite:'Favorite',reading:'My Reading List'}]
+    const recently = useSelector((state)=>state.recently);
+    const list=[{favorite:'Favorite',reading:'My Reading List',recent:'Recently Viewed'}]
     return (
       <div className='panel-card'>
           
@@ -14,6 +15,27 @@ function PanelCard() {
                   list.map((el)=>(
   
                       <div className='panel-card-div'>
+
+<li key={Math.random()}>
+                          <div>
+                          <i class="fa fa-solid fa-book"></i>
+                          </div>
+                          <Link to='/viewed'>
+                          <button>
+                          {el.recent} 
+                          </button>
+                         
+                          </Link>
+                          
+                          
+                          
+                      </li>
+
+
+
+
+
+
                             <li key={Math.random()}>
                           <div>
                           <i class="fa fa-solid fa-book"></i>
@@ -48,6 +70,9 @@ function PanelCard() {
                           
                           
                       </li>
+
+
+                     
   
                       </div>
                      

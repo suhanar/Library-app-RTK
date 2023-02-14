@@ -8,6 +8,7 @@ import CarouselFiction from './CarouselFiction';
 import CarouselDrama from './CarouselDrama';
 
 
+
 function Book({lookBook}) {
   const search = useSelector((state)=> state.search)
   return (
@@ -19,7 +20,7 @@ function Book({lookBook}) {
            <CarouselPoetry /> 
            <CarouselFiction />
            <CarouselDrama />
-
+           
          
         
 
